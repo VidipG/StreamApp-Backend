@@ -1,9 +1,9 @@
 
 public class Genre {
   String name;
-  int weight;
+  double weight;
   
-  Genre(String name, int weight) {
+  Genre(String name, double weight) {
     this.name = name;
     this.weight = weight;
   }

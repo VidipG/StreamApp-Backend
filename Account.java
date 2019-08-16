@@ -48,13 +48,4 @@ public class Account {
     long p = ChronoUnit.YEARS.between(this.date, today);
     return p > minAge;
   }
-
-  void generateSuggestions() {
-  }
 }
-
-
-//Add birthday and check if older than some specific age : method to
-//verify age
-//Array containing preferences, based on which suggestions will be generated
-//Language preferences??
