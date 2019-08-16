@@ -34,7 +34,6 @@ public class Account {
     if (this.emailValidate()) {
       this.accountCreaed = true;
     }
-    
   }
 
   void updatePassword(String newPassword, String inputUsername) {
