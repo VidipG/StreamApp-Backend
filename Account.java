@@ -21,7 +21,11 @@ public class Account {
     this.password = password;
     this.date = date;
     this.preferences = preferences;
-    this.email = email;
+    
+    if (this.emailValidate()) {
+      this.email = email;
+      this.accountCreaed = true; 
+    }
   }
   
   //Change from regex to apache-commons based email verification
@@ -30,12 +34,6 @@ public class Account {
     return matcher.find();
   }
   
-  void verifyAccount() {
-    if (this.emailValidate()) {
-      this.accountCreaed = true;
-    }
-  }
-
   void updatePassword(String newPassword, String inputUsername) {
     if (this.username.equals(inputUsername)) {
       this.password = newPassword;

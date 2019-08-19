@@ -51,6 +51,9 @@ public abstract class Video {
   
   void setRating(boolean rat) {
     this.ratings.add(0, rat);
+    ArrayList<Boolean> tempArr = new ArrayList<Boolean>();
+    tempArr.add(true);
+    System.out.println(tempArr);
   }
   
   double setOverallRating() {
