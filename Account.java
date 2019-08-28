@@ -6,10 +6,11 @@ import java.util.regex.Pattern;
 
 public class Account {
   String username;
-  String password;
+  String password; //create a data structure for storing passwords and user name.
   LocalDate date;
   ArrayList<Genre> preferences;
   String email;
+  //add a profile picture to the account
   
   private final int minAge = 13;
   boolean accountCreaed = false;
@@ -20,7 +21,7 @@ public class Account {
     this.username = username;
     this.password = password;
     this.date = date;
-    this.preferences = preferences;
+    this.preferences = new ArrayList<Genre>();
     
     if (this.emailValidate()) {
       this.email = email;
@@ -44,5 +45,23 @@ public class Account {
     LocalDate today = LocalDate.now();
     long p = ChronoUnit.YEARS.between(this.date, today);
     return p > minAge;
+  }
+  
+  void allPreferences() {
+    Genre comedy = new Genre("Comedy");
+    Genre horror = new Genre("Horror");
+    Genre thriller = new Genre("Thriller");
+    Genre adventure = new Genre("Adventure");
+    Genre crime = new Genre("Crime");
+    Genre drama = new Genre("Drama");
+    
+  }
+  
+  
+  
+  
+  
+  void updatePreferences() {
+    ArrayList<Genre> preferences = new ArrayList<Genre>();
   }
 }

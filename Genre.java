@@ -7,4 +7,8 @@ public class Genre {
     this.name = name;
     this.weight = weight;
   }
+  Genre(String name) {
+    this.name = name;
+    this.weight = 0;
+  }
 }

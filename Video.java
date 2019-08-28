@@ -15,8 +15,9 @@ public abstract class Video {
   String language;
   double rating;
   LocalDate releaseDate;
+  String description;
   
-  Video(String name, ArrayList<Genre> genre, int duration, boolean watched, ArrayList<Boolean> ratings, ArrayList<Video> suggested, String language, double rating, LocalDate releaseDate) {
+  Video(String name, ArrayList<Genre> genre, int duration, boolean watched, ArrayList<Boolean> ratings, ArrayList<Video> suggested, String language, double rating, LocalDate releaseDate, String description) {
     this.genre = genre;
     this.duration = duration;
     this.watched = watched;
@@ -25,9 +26,10 @@ public abstract class Video {
     this.language = language;
     this.rating = this.setOverallRating();
     this.releaseDate = releaseDate;
+    this.description = "";
   }
   
-  Video(String name, ArrayList<Genre> genre, ArrayList<Boolean> ratings, ArrayList<Video> suggested, String language, double rating, LocalDate releaseDate) {
+  Video(String name, ArrayList<Genre> genre, ArrayList<Boolean> ratings, ArrayList<Video> suggested, String language, double rating, LocalDate releaseDate, String description) {
     this.name = name;
     this.genre = genre;
     this.ratings = new ArrayList<Boolean>();
@@ -35,6 +37,7 @@ public abstract class Video {
     this.language = language;
     this.rating = rating;
     this.releaseDate = releaseDate;
+    this.description = "";
   }
   
   int remainingTime() {
