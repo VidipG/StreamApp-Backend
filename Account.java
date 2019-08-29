@@ -6,7 +6,7 @@ import java.util.regex.Pattern;
 
 public class Account {
   String username;
-  String password; //create a data structure for storing passwords and user name.
+  String password; //store passwords externally
   LocalDate date;
   ArrayList<Genre> preferences;
   String email;
@@ -47,19 +47,10 @@ public class Account {
     return p > minAge;
   }
   
-  void allPreferences() {
-    Genre comedy = new Genre("Comedy");
-    Genre horror = new Genre("Horror");
-    Genre thriller = new Genre("Thriller");
-    Genre adventure = new Genre("Adventure");
-    Genre crime = new Genre("Crime");
-    Genre drama = new Genre("Drama");
-    
+  boolean verifyAccount() {
+    return this.verifyAge() 
+        && this.emailValidate();
   }
-  
-  
-  
-  
   
   void updatePreferences() {
     ArrayList<Genre> preferences = new ArrayList<Genre>();

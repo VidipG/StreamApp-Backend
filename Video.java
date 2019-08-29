@@ -17,27 +17,31 @@ public abstract class Video {
   LocalDate releaseDate;
   String description;
   
-  Video(String name, ArrayList<Genre> genre, int duration, boolean watched, ArrayList<Boolean> ratings, ArrayList<Video> suggested, String language, double rating, LocalDate releaseDate, String description) {
+  //if the video has been watched before
+  Video(String name, ArrayList<Genre> genre, int duration, int completed, boolean watched, ArrayList<Boolean> ratings, ArrayList<Video> suggested, String language, double rating, LocalDate releaseDate, String description) {
     this.genre = genre;
     this.duration = duration;
+    this.completed = completed;
     this.watched = watched;
     this.ratings = new ArrayList<Boolean>();
     this.suggested = new ArrayList<Video>();
     this.language = language;
     this.rating = this.setOverallRating();
     this.releaseDate = releaseDate;
-    this.description = "";
+    this.description = description;
   }
   
-  Video(String name, ArrayList<Genre> genre, ArrayList<Boolean> ratings, ArrayList<Video> suggested, String language, double rating, LocalDate releaseDate, String description) {
+  //new video/ hasnt been watched before
+  Video(String name, ArrayList<Genre> genre, int duration, ArrayList<Boolean> ratings, ArrayList<Video> suggested, String language, double rating, LocalDate releaseDate, String description) {
     this.name = name;
     this.genre = genre;
+    this.duration = duration;
     this.ratings = new ArrayList<Boolean>();
     this.suggested = new ArrayList<Video>();
     this.language = language;
     this.rating = rating;
     this.releaseDate = releaseDate;
-    this.description = "";
+    this.description = description;
   }
   
   int remainingTime() {
@@ -80,4 +84,20 @@ public abstract class Video {
   void addSubtitle(String newLang) {
     this.subtitles.add(newLang);
   }
+  
+  void updateDescription(String description) {
+    this.description = description;
+  }
 }
+
+
+
+
+
+
+
+
+
+
+
+
