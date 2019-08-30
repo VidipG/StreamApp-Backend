@@ -9,6 +9,7 @@ public class Account {
   String password; //store passwords externally
   LocalDate date;
   ArrayList<Genre> preferences;
+  boolean selectedAccount;
   String email;
   //add a profile picture to the account
   
@@ -17,11 +18,12 @@ public class Account {
   public static final Pattern VALID_EMAIL_ADDRESS_REGEX = 
       Pattern.compile("^[A-Z0-9._%+-]+@[A-Z0-9.-]+\\.[A-Z]{2,6}$", Pattern.CASE_INSENSITIVE);
 
-  Account(String username, String password, LocalDate date, ArrayList<Genre> preferences, String email) {
+  Account(String username, String password, LocalDate date, ArrayList<Genre> preferences, boolean selectedAccount, String email) {
     this.username = username;
     this.password = password;
     this.date = date;
     this.preferences = new ArrayList<Genre>();
+    this.selectedAccount = false;
     
     if (this.emailValidate()) {
       this.email = email;
@@ -52,7 +54,13 @@ public class Account {
         && this.emailValidate();
   }
   
-  void updatePreferences() {
-    ArrayList<Genre> preferences = new ArrayList<Genre>();
+  void updateGenre(ArrayList<Genre> availableGenre) {
+    String msg1 = new String("Here are the available genres:");
+    for (int i = 0; i <= availableGenre.size(); i++) {
+      System.out.println(i + availableGenre.get(i).name);
+    }
+    System.out.println("Enter the number of the genre you want to pick");
+    int inputVal = 0; //update to take users input
+    this.preferences.add(availableGenre.get(inputVal));
   }
 }

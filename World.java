@@ -29,7 +29,17 @@ public class World {
     Genre adventure = new Genre("Adventure");
     Genre crime = new Genre("Crime");
     Genre drama = new Genre("Drama");
+    Genre fantasy = new Genre("Fantasy");
     
-    this.availableGenre.addAll(Arrays.asList(comedy, horror, thriller, adventure, crime, drama));
+    this.availableGenre.addAll(Arrays.asList(comedy, horror, thriller, adventure, crime, drama, fantasy));
+  }
+  
+  void updatePreferences() {
+    for (int i = 0; i <= this.users.size(); i++) {
+      Account tempAcc = this.users.get(i);
+      if (tempAcc.selectedAccount) {
+        tempAcc.updateGenre(this.availableGenre);
+      }
+    }
   }
 }
