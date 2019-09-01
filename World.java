@@ -11,6 +11,15 @@ public class World {
     
   }
   
+  //use regex
+  boolean verifyPassword(String password) {
+    return password.length() >= 8 
+        && password.contains("A")
+        && password.contains("1")
+        && password.contains("@");
+
+  }
+  
   boolean login(String inputUsername, String inputPassword, Account acc) {
     return acc.username.equals(inputUsername)
         && acc.password.equals(inputPassword); //create a separate method for verifying password based on data structure created
@@ -32,6 +41,11 @@ public class World {
     Genre fantasy = new Genre("Fantasy");
     
     this.availableGenre.addAll(Arrays.asList(comedy, horror, thriller, adventure, crime, drama, fantasy));
+  }
+  
+  //need to use swing/jfx
+  void selectAccount() {
+    
   }
   
   void updatePreferences() {
